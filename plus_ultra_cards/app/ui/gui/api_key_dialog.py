@@ -11,12 +11,13 @@ from pathlib import Path
 from typing import Dict, Any
 
 from PySide6.QtWidgets import (
-    QDialog, QVBoxLayout, QHBoxLayout, QFormLayout, QLineEdit, 
+    QDialog, QVBoxLayout, QHBoxLayout, QFormLayout, QLineEdit,
     QPushButton, QLabel, QTabWidget, QWidget, QTextEdit, QGroupBox,
     QCheckBox, QSpinBox, QComboBox, QMessageBox
 )
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QFont
+
+from app.ui.font_loader import load_win95_font
 
 
 class APIKeyDialog(QDialog):
@@ -262,14 +263,7 @@ class APIKeyDialog(QDialog):
     
     def apply_retro_styling(self):
         """Apply retro Win95 styling"""
-        font_path = Path("app/assets/W95Afont.otf")
-        if font_path.exists():
-            font_id = QFont.addApplicationFont(str(font_path))
-            if font_id != -1:
-                font_family = QFont.applicationFontFamilies(font_id)[0]
-                font = QFont(font_family, 9)
-                self.setFont(font)
-        
+        load_win95_font()
         # Apply retro color scheme
         self.setStyleSheet("""
             QDialog {

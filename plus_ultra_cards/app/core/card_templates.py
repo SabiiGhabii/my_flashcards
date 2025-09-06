@@ -6,7 +6,8 @@ Provides retro-styled preset templates and custom template management.
 import json
 import os
 from typing import Dict, List
-from pathlib import Path
+
+from app.ui.font_loader import load_win95_font
 
 
 class CardTemplateManager:
@@ -42,8 +43,8 @@ class CardTemplateManager:
     
     def create_default_templates(self) -> Dict:
         """Create the default template - only Basic template with proper MS Sans Serif font."""
-        # Load the MS Sans Serif font explicitly to ensure it's available
-        self._ensure_ms_sans_serif_loaded()
+        # Load the Win95 font to ensure substitutions are set
+        load_win95_font()
 
         templates = {
             "Basic": {
@@ -60,36 +61,6 @@ class CardTemplateManager:
         self.save_templates()
         return templates
 
-    def _ensure_ms_sans_serif_loaded(self):
-        """Ensure MS Sans Serif font is loaded from the .otf file."""
-        try:
-            from PySide6.QtGui import QFontDatabase, QFont
-            from pathlib import Path
-
-            # Path to the MS Sans Serif font file
-            font_path = Path(__file__).resolve().parents[1] / "assets" / "fonts" / "W95font.otf"
-
-            if font_path.exists():
-                fid = QFontDatabase.addApplicationFont(str(font_path))
-                if fid != -1:
-                    families = QFontDatabase.applicationFontFamilies(fid)
-                    if families:
-                        loaded_family = families[0]
-                        # Set up font substitutions to ensure MS Sans Serif resolves correctly
-                        QFont.insertSubstitution("MS Sans Serif", loaded_family)
-                        QFont.insertSubstitution("Microsoft Sans Serif", loaded_family)
-                        # Also set up the reverse mapping
-                        QFont.insertSubstitution("W95font", loaded_family)
-                        print(f"MS Sans Serif font loaded successfully: {loaded_family}")
-                        return True
-
-            print("Warning: MS Sans Serif font file not found, using system fallback")
-            return False
-
-        except Exception as e:
-            print(f"Error loading MS Sans Serif font: {e}")
-            return False
-    
     def ensure_default_templates(self, templates: Dict):
         """Ensure default templates exist in the loaded templates."""
         defaults = self.create_default_templates()
