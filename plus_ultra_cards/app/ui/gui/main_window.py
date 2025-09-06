@@ -18,6 +18,7 @@ from PySide6.QtWidgets import (
 
 # Import app components
 from app.ui.retro95 import apply_win95_theme, RetroSeparator, RetroMarquee
+from app.ui.font_loader import load_win95_font
 from app.core.card_manager import CardManager
 from app.core.study_sessions import SessionManager, StudyMode
 from app.core.deck_layout_manager import DeckLayoutManager
@@ -1124,7 +1125,8 @@ class MainWindow(QMainWindow):
 def main():
     """Main application entry point."""
     app = QApplication(sys.argv)
-    apply_win95_theme(app, base_point_size=10)
+    load_win95_font(app)
+    apply_win95_theme(app)
 
     window = MainWindow()
     window.show()

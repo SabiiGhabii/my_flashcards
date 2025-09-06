@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from PySide6.QtWidgets import QApplication, QMessageBox
 from app.ui.gui.main_window import MainWindow
 from app.ui.retro95 import apply_win95_theme
+from app.ui.font_loader import load_win95_font
 
 
 def check_dependencies():
@@ -97,10 +98,16 @@ def main():
     app.setApplicationName("Plus Ultra Cards")
     app.setApplicationVersion("1.0")
     app.setOrganizationName("Plus Ultra Cards")
-    
+
+    # Load Win95 font before any widgets are created
+    try:
+        load_win95_font(app, base_point_size=10)
+    except Exception as e:
+        print(f"Warning: Failed to load Win95 font: {e}")
+
     # Apply retro95 theme
     try:
-        apply_win95_theme(app, base_point_size=10)
+        apply_win95_theme(app)
     except Exception as e:
         print(f"Warning: Failed to apply retro95 theme: {e}")
     

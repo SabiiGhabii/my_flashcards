@@ -12,6 +12,7 @@ from PySide6.QtWidgets import (
 
 from app.formatting.formatter_service import FormatterService, RenderingOptions
 from app.formatting.text_formatter import TextFormatter as _TF_CSS
+from app.ui.font_loader import load_win95_font
 
 
 class CodeAwareTextEdit(QTextEdit):
@@ -123,22 +124,8 @@ class FormattedTextDisplay(QLabel):
         self.setTextFormat(Qt.RichText)
         self.setWordWrap(True)
         self.setAlignment(Qt.AlignTop | Qt.AlignLeft)
-        # Try to load bundled MS Sans Serif from assets (if present)
-        try:
-            from PySide6.QtGui import QFontDatabase
-            from pathlib import Path as _P
-            _assets = _P(__file__).resolve().parents[2] / "assets"
-            for cand in ["MS_Sans_Serif.ttf", "ms_sans_serif.ttf", "MS_Sans_Serif.otf"]:
-                fp = _assets / cand
-                if fp.exists():
-                    fid = QFontDatabase.addApplicationFont(str(fp))
-                    if fid != -1:
-                        fams = QFontDatabase.applicationFontFamilies(fid)
-                        if fams:
-                            self.setFont(QFont(fams[0], 10))
-                            break
-        except Exception:
-            pass
+
+        load_win95_font()
 
         self.setStyleSheet("""
             QLabel {

@@ -19,6 +19,8 @@ from app.core.card_templates import CardTemplateManager
 from app.ui.enhanced_text_widgets import CodeEditorWidget, FormattedTextDisplay, CodeAwareTextEdit
 from app.ui.gui.widgets.scroll_label import ScrollableLabel
 
+from app.ui.font_loader import load_win95_font
+
 import re
 
 class CardEditorDialog(QDialog):
@@ -34,24 +36,8 @@ class CardEditorDialog(QDialog):
         self.setWindowTitle("Card Editor")
         self.resize(900, 700)
 
-        # Ensure Win95 font is loaded + substitution for legacy names in dialogs
-        try:
-            from PySide6.QtGui import QFontDatabase, QFont
-            from pathlib import Path
-            otf_path = Path(__file__).resolve().parents[2] / "assets" / "fonts" / "W95font.otf"
-            if otf_path.exists():
-                fid = QFontDatabase.addApplicationFont(str(otf_path))
-                if fid != -1:
-                    fams = QFontDatabase.applicationFontFamilies(fid)
-                    if fams:
-                        fam = fams[0]
-                        self.setFont(QFont(fam, 9))
-                        # Substitutions so CSS requests resolve
-                        QFont.insertSubstitution("MS Sans Serif", fam)
-                        QFont.insertSubstitution("Microsoft Sans Serif", fam)
-                        QFont.insertSubstitution("Fixedsys", "Courier New")
-        except Exception:
-            pass
+        # Ensure Win95 font substitutions are in place
+        load_win95_font()
 
         self.setup_ui()
         if card:

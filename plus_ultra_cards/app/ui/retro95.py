@@ -5,7 +5,7 @@ import math, os, random, sys, time
 from pathlib import Path
 
 from PySide6.QtCore import Qt, QTimer, QPoint, QRect
-from PySide6.QtGui import (QAction, QColor, QCursor, QFont, QFontDatabase, QIcon,
+from PySide6.QtGui import (QAction, QColor, QCursor, QIcon,
                            QPainter, QPalette, QPixmap)
 from PySide6.QtCore import QSize
 from PySide6.QtGui import QIcon
@@ -17,6 +17,8 @@ from PySide6.QtWidgets import (
     QStatusBar, QStyle, QTabWidget, QTableWidget, QTableWidgetItem, QTextEdit,
     QToolBar, QTreeView, QVBoxLayout, QWidget
 )
+
+from .font_loader import load_win95_font
 
 # ---------------------- Win95 Palette + QSS ----------------------
 WIN95 = {
@@ -152,7 +154,8 @@ def vintage_icon(icon: QIcon, size: QSize, downscale: float = 0.9) -> QIcon:
     chunky = small.scaled(size, Qt.KeepAspectRatio, Qt.FastTransformation)
     return QIcon(chunky)
 
-def apply_win95_theme(app: QApplication, base_point_size: int = 9):
+def apply_win95_theme(app: QApplication):
+    """Apply Win95-style palette and styling."""
     # Palette (Fusion for consistent cross-platform look)
     app.setStyle("Fusion")
     pal = QPalette()
@@ -168,52 +171,6 @@ def apply_win95_theme(app: QApplication, base_point_size: int = 9):
     pal.setColor(QPalette.Highlight, QColor(WIN95["sel_bg"]))
     pal.setColor(QPalette.HighlightedText, QColor(WIN95["sel_text"]))
     app.setPalette(pal)
-
-    # Load Win95-style OTF and set substitutions for legacy names
-    ok = False
-    loaded_family = None
-
-    # Direct path to the font file in app/assets/fonts
-    font_path = Path(__file__).resolve().parent.parent / "assets" / "fonts" / "W95font.otf"
-
-    # Try the direct path first, then fallbacks
-    possible_paths = [
-        font_path,  # Direct path: app/assets/fonts/W95font.otf
-        Path(__file__).resolve().parents[1] / "assets" / "fonts" / "W95font.otf",  # app/assets/fonts
-        Path(__file__).resolve().parents[2] / "assets" / "fonts" / "W95font.otf",  # project-root/assets/fonts
-        Path.cwd() / "assets" / "fonts" / "W95font.otf",                           # cwd/assets/fonts
-        Path.cwd() / "W95font.otf",                                                    # cwd
-        Path(__file__).resolve().parents[2] / "W95font.otf",                           # project root
-    ]
-
-    for p in possible_paths:
-        if p.exists():
-            fid = QFontDatabase.addApplicationFont(str(p))
-            if fid != -1:
-                fams = QFontDatabase.applicationFontFamilies(fid)
-                if fams:
-                    loaded_family = fams[0]
-                    f = QFont(loaded_family, base_point_size)
-                    app.setFont(f)
-                    ok = True
-                    # Substitute legacy names to our bundled font
-                    QFont.insertSubstitution("MS Sans Serif", loaded_family)
-                    QFont.insertSubstitution("Microsoft Sans Serif", loaded_family)
-                    # For Fixedsys (monospace), map to Courier New if we don't bundle a fixed font
-                    QFont.insertSubstitution("Fixedsys", "Courier New")
-                    break
-
-    if not ok:
-        # Fallbacks (Windows has "Microsoft Sans Serif"); else Tahoma/Arial
-        for family in ("Microsoft Sans Serif", "Tahoma", "Arial"):
-            if family in QFontDatabase().families():
-                f = QFont(family, base_point_size)
-                app.setFont(f)
-                # Ensure legacy names resolve to an installed font to avoid DirectWrite errors
-                QFont.insertSubstitution("MS Sans Serif", family)
-                QFont.insertSubstitution("Microsoft Sans Serif", family)
-                QFont.insertSubstitution("Fixedsys", "Courier New")
-                break
 
     app.setStyleSheet(_QSS)
 
@@ -528,6 +485,7 @@ class Main(QMainWindow):
 # ---------------------- Main ----------------------
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    apply_win95_theme(app, base_point_size=11)  # loads W95FA.otf from same folder if present
+    load_win95_font(app, base_point_size=11)
+    apply_win95_theme(app)
     Main().show()
     sys.exit(app.exec())
