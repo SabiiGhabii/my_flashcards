@@ -20,14 +20,29 @@ class FormatterService:
         self._tf = TextFormatter()
 
     def render(self, text: str, options: RenderingOptions) -> str:
-        # Check for any type of cloze (standard or input)
-        if options.reveal_cloze or "{{c" in text or "{{cin" in text:
+        """Render text handling both standard and input clozes uniformly."""
+        if "{{cin" in text:
             if options.reveal_cloze:
-                html = self._tf.render_cloze_revealed(text, apply_syntax_highlighting=options.apply_syntax_highlighting)
+                html = self._tf.render_cloze_input_revealed(
+                    text, apply_syntax_highlighting=options.apply_syntax_highlighting
+                )
             else:
-                html = self._tf.render_cloze_blanked(text, apply_syntax_highlighting=options.apply_syntax_highlighting)
+                html = self._tf.render_cloze_input_blanked(
+                    text, apply_syntax_highlighting=options.apply_syntax_highlighting
+                )
+        elif options.reveal_cloze or "{{c" in text:
+            if options.reveal_cloze:
+                html = self._tf.render_cloze_revealed(
+                    text, apply_syntax_highlighting=options.apply_syntax_highlighting
+                )
+            else:
+                html = self._tf.render_cloze_blanked(
+                    text, apply_syntax_highlighting=options.apply_syntax_highlighting
+                )
         else:
-            html = self._tf.render_to_html(text, apply_syntax_highlighting=options.apply_syntax_highlighting)
+            html = self._tf.render_to_html(
+                text, apply_syntax_highlighting=options.apply_syntax_highlighting
+            )
 
         if options.inline_css:
             return f"<div style=\"{options.inline_css}\">{html}</div>"

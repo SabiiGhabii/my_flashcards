@@ -812,10 +812,12 @@ class StudyWindow(QDialog):
 
         front_text = current_card['front']
 
-        # Use TextFormatter's robust revealed rendering instead of manual regex replacement
-        from app.formatting.text_formatter import TextFormatter
-        formatter = TextFormatter()
-        revealed_html = formatter.render_cloze_input_revealed(front_text, apply_syntax_highlighting=True)
+        # Use FormatterService's robust revealed rendering instead of manual regex replacement
+        from app.formatting.formatter_service import FormatterService
+        formatter = FormatterService()
+        revealed_html = formatter.render_cloze_input_revealed(
+            front_text, apply_syntax_highlighting=True
+        )
 
         # Apply CSS and display the revealed content
         css = self._css_source2.get_default_code_css()

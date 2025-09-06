@@ -339,10 +339,16 @@ class TextFormatter:
         lang_attr = f' data-language="{language}"' if language else ''
         return f'<pre class="code-block"{lang_attr}><code>{escaped_content}</code></pre>'
     
-    def _render_with_cloze_placeholders(self, text: str, reveal: bool, apply_syntax_highlighting: bool) -> str:
+    def _render_with_cloze_placeholders(
+        self,
+        text: str,
+        reveal: bool,
+        apply_syntax_highlighting: bool,
+        use_input_fields: bool = False,
+    ) -> str:
         """Common pipeline to handle cloze before escaping and style parsing.
         - Replaces each cloze with a unique placeholder token (plain text)
-        - Builds a map from token -> final HTML (blank span or revealed+rendered HTML)
+        - Builds a map from token -> final HTML (blank span/input or revealed+rendered HTML)
         - Renders the remainder via render_to_html (which escapes text)
         - Finally replaces tokens with their HTML (post-escape), preventing raw HTML from being escaped
         """
@@ -371,14 +377,24 @@ class TextFormatter:
             nonlocal token_counter
             token_counter += 1
             token = f"__CLOZE_INPUT_TOKEN_{token_counter}__"
+            cloze_num = m.group(1)
             inner = m.group(2)
             if reveal:
                 # For cloze input, show the answer with different styling
                 inner_html = self.render_to_html(inner, apply_syntax_highlighting=False)
-                token_map[token] = f'<span class="cloze-input-revealed">{inner_html}</span>'
+                token_map[token] = (
+                    f'<span class="cloze-input-revealed" data-cloze="{cloze_num}">{inner_html}</span>'
+                )
             else:
-                # For cloze input, show an input field placeholder
-                token_map[token] = '<span class="cloze-input-blank">[ _____ ]</span>'
+                if use_input_fields:
+                    token_map[token] = (
+                        f'<input type="text" class="cloze-input-field" '
+                        f'data-cloze="{cloze_num}" data-answer="{inner}" '
+                        f'placeholder="Type answer..." />'
+                    )
+                else:
+                    # For cloze input without interactive fields, show a blank span
+                    token_map[token] = '<span class="cloze-input-blank">[ _____ ]</span>'
             return token
 
         # Replace standard clozes with tokens (DOTALL for multiline)
@@ -406,57 +422,21 @@ class TextFormatter:
 
     def render_cloze_input_blanked(self, text: str, apply_syntax_highlighting: bool = True) -> str:
         """Render text with cloze input fields for user interaction."""
-        return self._render_with_cloze_input_placeholders(text, reveal=False, apply_syntax_highlighting=apply_syntax_highlighting)
+        return self._render_with_cloze_placeholders(
+            text,
+            reveal=False,
+            apply_syntax_highlighting=apply_syntax_highlighting,
+            use_input_fields=True,
+        )
 
     def render_cloze_input_revealed(self, text: str, apply_syntax_highlighting: bool = True) -> str:
         """Render text with cloze input answers revealed."""
-        return self._render_with_cloze_input_placeholders(text, reveal=True, apply_syntax_highlighting=apply_syntax_highlighting)
-
-    def _render_with_cloze_input_placeholders(self, text: str, reveal: bool, apply_syntax_highlighting: bool) -> str:
-        """Render text with cloze input placeholders ({{cin1::answer}} format)."""
-        import re
-
-        # Robust pattern to match multi-line {{cin1::...}} allowing nested braces and style markers
-        cloze_input_pattern = self.CLOZE_INPUT_PATTERN  # non-greedy DOTALL pattern with safe terminator
-
-        # Find all cloze input matches
-        matches = list(re.finditer(cloze_input_pattern, text, flags=re.DOTALL))
-        if not matches:
-            # No cloze input patterns, render normally
-            return self.render_to_html(text, apply_syntax_highlighting)
-
-        # Create placeholders and build token map
-        token_map = {}
-        text_with_tokens = text
-
-        # Process matches in reverse order to maintain positions
-        for match in reversed(matches):
-            cloze_num = match.group(1)
-            answer = match.group(2)
-
-            # Create unique token
-            token = f"__CLOZE_INPUT_TOKEN_{cloze_num}_{len(token_map)}__"
-
-            if reveal:
-                # Show the answer with highlighting
-                html_replacement = f'<span class="cloze-input-revealed" data-cloze="{cloze_num}">{answer}</span>'
-            else:
-                # Show input field for user interaction
-                html_replacement = f'<input type="text" class="cloze-input-field" data-cloze="{cloze_num}" data-answer="{answer}" placeholder="Type answer..." />'
-
-            token_map[token] = html_replacement
-
-            # Replace in text with token
-            text_with_tokens = text_with_tokens[:match.start()] + token + text_with_tokens[match.end():]
-
-        # Render the text with tokens (this will escape HTML but preserve our tokens)
-        html_out = self.render_to_html(text_with_tokens, apply_syntax_highlighting)
-
-        # Replace tokens with their HTML (post-escape)
-        for token in sorted(token_map.keys(), key=len, reverse=True):
-            html_out = html_out.replace(token, token_map[token])
-
-        return html_out
+        return self._render_with_cloze_placeholders(
+            text,
+            reveal=True,
+            apply_syntax_highlighting=apply_syntax_highlighting,
+            use_input_fields=True,
+        )
 
     def render_cloze_input_for_display(self, text: str, apply_syntax_highlighting: bool = True) -> str:
         """Render cloze input text for QLabel display with placeholder spans (no interactive elements)."""
