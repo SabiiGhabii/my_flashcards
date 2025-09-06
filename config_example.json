@@ -1,0 +1,251 @@
+{
+  "_comment": "Ultimate Flashcard Generation System - Example Configuration",
+  "_description": "Copy this file to ~/.flashcard_system/config.json and customize as needed",
+  
+  "api_keys": {
+    "gemini_api_key": "your_gemini_api_key_here",
+    "openai_api_key": "your_openai_api_key_here",
+    "github_token": "your_github_token_here"
+  },
+  
+  "default_settings": {
+    "output_dir": "exports",
+    "cache_dir": "cache",
+    "temp_dir": "temp",
+    "log_level": "INFO",
+    "verbose": false
+  },
+  
+  "export_settings": {
+    "default_formats": ["json", "csv"],
+    "anki_compatibility": true,
+    "include_metadata": true,
+    "bulk_export_chunk_size": 1000,
+    "compression": false
+  },
+  
+  "processing_settings": {
+    "max_cards_per_section": 100,
+    "batch_size": 1000,
+    "memory_threshold_mb": 1000,
+    "similarity_threshold": 0.7,
+    "min_concept_length": 3,
+    "max_concept_length": 100,
+    "enable_comprehensive_mode": false
+  },
+  
+  "ai_settings": {
+    "use_gemini": true,
+    "use_openai": false,
+    "temperature": 0.7,
+    "max_tokens": 2048,
+    "rate_limit_delay": 1.0,
+    "retry_attempts": 3,
+    "timeout_seconds": 30,
+    "model_preferences": {
+      "gemini_model": "gemini-pro",
+      "openai_model": "gpt-3.5-turbo"
+    }
+  },
+  
+  "content_processing": {
+    "pdf_settings": {
+      "extract_images": false,
+      "ocr_enabled": false,
+      "page_range": null,
+      "ignore_headers_footers": true
+    },
+    "github_settings": {
+      "max_files": 50,
+      "file_extensions": ["py", "js", "ts", "java", "cpp", "c", "h", "md", "rst"],
+      "include_documentation": true,
+      "exclude_patterns": ["test_*", "*_test.py", "*.min.js"],
+      "max_file_size_mb": 5
+    },
+    "html_settings": {
+      "max_sections": 100,
+      "follow_links": false,
+      "extract_code_blocks": true,
+      "ignore_navigation": true
+    }
+  },
+  
+  "card_generation": {
+    "card_types": {
+      "front_back": {
+        "enabled": true,
+        "weight": 0.4,
+        "templates": ["definition", "explanation", "application"]
+      },
+      "cloze": {
+        "enabled": true,
+        "weight": 0.3,
+        "templates": ["concept", "formula", "process"]
+      },
+      "cloze_input": {
+        "enabled": true,
+        "weight": 0.3,
+        "subtypes": {
+          "partial_deletion": {
+            "enabled": true,
+            "max_deletions": 3,
+            "focus_on_keywords": true
+          },
+          "sequential_deletion": {
+            "enabled": true,
+            "include_explanations": true,
+            "generate_legend": true
+          },
+          "deterministic_deletion": {
+            "enabled": true,
+            "max_deletions": 5,
+            "syntax_focus": true
+          }
+        }
+      }
+    },
+    "difficulty_levels": {
+      "auto_adjust": true,
+      "distribution": {
+        "basic": 0.3,
+        "intermediate": 0.5,
+        "advanced": 0.2
+      }
+    },
+    "tag_management": {
+      "auto_generate": true,
+      "hierarchical": true,
+      "max_tags_per_card": 5,
+      "tag_synonyms": {
+        "programming": ["coding", "development"],
+        "mathematics": ["math", "calculation"],
+        "algorithm": ["algo", "procedure"]
+      }
+    }
+  },
+  
+  "advanced_features": {
+    "progressive_disclosure": {
+      "enabled": true,
+      "max_levels": 4,
+      "auto_generate_levels": true
+    },
+    "interactive_code": {
+      "enabled": true,
+      "execution_timeout": 10,
+      "supported_languages": ["python", "javascript", "java"],
+      "auto_generate_tests": true
+    },
+    "visual_diagrams": {
+      "enabled": true,
+      "diagram_types": ["neural_network", "system_architecture", "algorithm_flow"],
+      "interactive_completion": true
+    },
+    "mathematical_processing": {
+      "latex_rendering": true,
+      "sympy_integration": true,
+      "equation_solving": true,
+      "step_by_step_solutions": true
+    }
+  },
+  
+  "performance_optimization": {
+    "caching": {
+      "enabled": true,
+      "max_cache_size_mb": 500,
+      "cache_ttl_hours": 24,
+      "semantic_caching": true
+    },
+    "parallel_processing": {
+      "enabled": true,
+      "max_workers": null,
+      "chunk_size": 1000
+    },
+    "memory_management": {
+      "auto_cleanup": true,
+      "gc_threshold": 1000,
+      "memory_monitoring": true
+    }
+  },
+  
+  "analytics": {
+    "enabled": true,
+    "track_performance": true,
+    "generate_insights": true,
+    "retention_prediction": true,
+    "study_optimization": true,
+    "export_reports": true,
+    "data_retention_days": 365
+  },
+  
+  "ui_preferences": {
+    "color_scheme": "auto",
+    "progress_bars": true,
+    "interactive_prompts": true,
+    "confirmation_dialogs": true,
+    "detailed_output": false
+  },
+  
+  "security": {
+    "encrypt_api_keys": false,
+    "secure_storage": false,
+    "audit_logging": false
+  },
+  
+  "experimental_features": {
+    "multi_modal_processing": false,
+    "video_content_extraction": false,
+    "audio_transcription": false,
+    "image_ocr": false,
+    "collaborative_features": false
+  },
+  
+  "custom_instructions": {
+    "global": "",
+    "pdf_processing": "Focus on key concepts and definitions",
+    "code_processing": "Emphasize practical examples and best practices",
+    "math_processing": "Include step-by-step solutions and explanations"
+  },
+  
+  "template_preferences": {
+    "primary_selection": "all",
+    "secondary_filters": ["definition", "concept", "partial"],
+    "granular_options": ["detailed", "step_by_step", "algorithm"],
+    "custom_templates_dir": "custom_templates"
+  },
+  
+  "integration": {
+    "anki": {
+      "deck_name_template": "Flashcards_{source}_{date}",
+      "note_type_mapping": {
+        "front_back": "Basic",
+        "cloze": "Cloze",
+        "cloze_input": "Cloze"
+      }
+    },
+    "spaced_repetition": {
+      "algorithm": "sm2",
+      "initial_interval": 1,
+      "ease_factor": 2.5,
+      "interval_modifier": 1.0
+    }
+  },
+  
+  "quality_assurance": {
+    "auto_validation": true,
+    "duplicate_detection": true,
+    "content_filtering": {
+      "min_length": 10,
+      "max_length": 500,
+      "filter_nonsense": true
+    },
+    "educational_value_scoring": true
+  },
+  
+  "backup_and_sync": {
+    "auto_backup": false,
+    "backup_interval_hours": 24,
+    "cloud_sync": false,
+    "sync_provider": null
+  }
+}

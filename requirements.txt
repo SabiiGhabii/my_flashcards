@@ -1,0 +1,9 @@
+PyMuPDF==1.24.10
+tqdm==4.66.4
+nltk==3.9.1
+yake==0.4.8
+keybert==0.8.5
+sentence-transformers>=2.7.0
+
+# Optional Gemini
+google-generativeai>=0.7.0

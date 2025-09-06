@@ -1,0 +1,6 @@
+{"timestamp": "2025-09-03T18:18:02.966507", "cards_reviewed": 25, "correct_answers": 20, "total_time": 15.5, "difficulty_level": "intermediate", "content_source": "python_tutorial", "card_types": ["front_back", "cloze"]}
+{"timestamp": "2025-09-03T18:18:02.967850", "cards_reviewed": 30, "correct_answers": 24, "total_time": 18.2, "difficulty_level": "advanced", "content_source": "machine_learning", "card_types": ["cloze_input", "progressive"]}
+{"timestamp": "2025-09-03T18:18:02.969041", "cards_reviewed": 20, "correct_answers": 18, "total_time": 12.0, "difficulty_level": "basic", "content_source": "data_structures", "card_types": ["front_back", "interactive_code"]}
+{"timestamp": "2025-09-03T18:18:03.125372", "cards_reviewed": 25, "correct_answers": 20, "total_time": 15.5, "difficulty_level": "intermediate", "content_source": "python_tutorial", "card_types": ["front_back", "cloze"]}
+{"timestamp": "2025-09-03T18:18:03.126455", "cards_reviewed": 30, "correct_answers": 24, "total_time": 18.2, "difficulty_level": "advanced", "content_source": "machine_learning", "card_types": ["cloze_input", "progressive"]}
+{"timestamp": "2025-09-03T18:18:03.127373", "cards_reviewed": 20, "correct_answers": 18, "total_time": 12.0, "difficulty_level": "basic", "content_source": "data_structures", "card_types": ["front_back", "interactive_code"]}

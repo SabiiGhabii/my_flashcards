@@ -1,0 +1,309 @@
+[
+  {
+    "id": "fb_network_metric_def",
+    "name": "Network Metric \u2192 Definition",
+    "type": "fb",
+    "description": "Define a common network metric (degree, betweenness, clustering, assortativity).",
+    "placeholders": [
+      "metric",
+      "definition",
+      "context",
+      "tags"
+    ],
+    "render": {
+      "front": "Define the network metric: [[metric]].",
+      "back": "[[definition]]\n\n_Context_: [[context]]",
+      "hint": "Think numerator/denominator and what paths/triads are counted.",
+      "tag_rules": [
+        "network",
+        "metric",
+        "[[metric]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_network_model_traits",
+    "name": "Network Model \u2192 Traits",
+    "type": "fb",
+    "description": "Model name on front, key traits on back (ER, BA, WS, configuration model).",
+    "placeholders": [
+      "model",
+      "traits",
+      "tags"
+    ],
+    "render": {
+      "front": "List the primary traits of the [[model]] network model.",
+      "back": "[[traits]]",
+      "hint": "Degree distribution? Clustering? Path length? Generative rule?",
+      "tag_rules": [
+        "network",
+        "model",
+        "[[model]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_preferential_attachment",
+    "name": "Preferential Attachment \u2192 Mechanism",
+    "type": "fb",
+    "description": "Describe the mechanism and consequences of preferential attachment.",
+    "placeholders": [
+      "mechanism",
+      "implications",
+      "tags"
+    ],
+    "render": {
+      "front": "What is preferential attachment?",
+      "back": "[[mechanism]]\n\n_Implications_: [[implications]]",
+      "hint": "Attachment probability \u221d degree; heavy tails emerge.",
+      "tag_rules": [
+        "network",
+        "growth"
+      ]
+    }
+  },
+  {
+    "id": "fb_power_law_props",
+    "name": "Power-law \u2192 Properties",
+    "type": "fb",
+    "description": "Describe properties and diagnostics of power-law distributions.",
+    "placeholders": [
+      "properties",
+      "diagnostics",
+      "tags"
+    ],
+    "render": {
+      "front": "List key properties/diagnostics of a power-law degree distribution.",
+      "back": "[[properties]]\n\n_Diagnostics_: [[diagnostics]]",
+      "hint": "Log-log tails, tail exponent, goodness-of-fit caveats.",
+      "tag_rules": [
+        "network",
+        "distribution",
+        "power_law"
+      ]
+    }
+  },
+  {
+    "id": "fb_survival_term",
+    "name": "Survival Term \u2192 Definition",
+    "type": "fb",
+    "description": "Term on front (hazard, survival, cumulative hazard); definition on back.",
+    "placeholders": [
+      "term",
+      "definition",
+      "tags"
+    ],
+    "render": {
+      "front": "Define [[term]] in survival analysis.",
+      "back": "[[definition]]",
+      "hint": "Units and relation among S(t), f(t), h(t).",
+      "tag_rules": [
+        "survival",
+        "[[term]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_km_interpretation",
+    "name": "Kaplan\u2013Meier \u2192 Interpretation",
+    "type": "fb",
+    "description": "Interpretation and what the step curve represents.",
+    "placeholders": [
+      "interpretation",
+      "assumptions",
+      "tags"
+    ],
+    "render": {
+      "front": "Interpret a Kaplan\u2013Meier curve.",
+      "back": "[[interpretation]]\n\n_Assumptions_: [[assumptions]]",
+      "hint": "Consider censoring and independence assumptions.",
+      "tag_rules": [
+        "survival",
+        "km"
+      ]
+    }
+  },
+  {
+    "id": "fb_censoring_types",
+    "name": "Censoring \u2192 Types",
+    "type": "fb",
+    "description": "Right/left/interval and their implications.",
+    "placeholders": [
+      "types",
+      "implications",
+      "tags"
+    ],
+    "render": {
+      "front": "What are the main types of censoring?",
+      "back": "[[types]]\n\n_Implications_: [[implications]]",
+      "hint": "How each affects likelihood contributions.",
+      "tag_rules": [
+        "survival",
+        "censoring"
+      ]
+    }
+  },
+  {
+    "id": "fb_cox_assumptions",
+    "name": "Cox PH \u2192 Assumptions",
+    "type": "fb",
+    "description": "List proportional hazards assumptions & checks.",
+    "placeholders": [
+      "assumptions",
+      "diagnostics",
+      "tags"
+    ],
+    "render": {
+      "front": "State the key assumptions of the Cox proportional hazards model.",
+      "back": "[[assumptions]]\n\n_Diagnostics_: [[diagnostics]]",
+      "hint": "Proportionality, linearity in log hazard, independent censoring.",
+      "tag_rules": [
+        "survival",
+        "cox"
+      ]
+    }
+  },
+  {
+    "id": "fb_regularization_effect",
+    "name": "Regularization Type \u2192 Effect",
+    "type": "fb",
+    "description": "L1 vs L2 vs Elastic Net effects.",
+    "placeholders": [
+      "reg_type",
+      "effect",
+      "tags"
+    ],
+    "render": {
+      "front": "What is the effect of [[reg_type]] regularization?",
+      "back": "[[effect]]",
+      "hint": "Sparsity vs shrinkage; geometry of penalties.",
+      "tag_rules": [
+        "ml",
+        "regularization",
+        "[[reg_type]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_bias_variance",
+    "name": "Bias\u2013Variance \u2192 Tradeoff",
+    "type": "fb",
+    "description": "Explain the bias\u2013variance tradeoff and its implications.",
+    "placeholders": [
+      "explanation",
+      "implications",
+      "tags"
+    ],
+    "render": {
+      "front": "Explain the bias\u2013variance tradeoff.",
+      "back": "[[explanation]]\n\n_Implications_: [[implications]]",
+      "hint": "Model complexity vs generalization.",
+      "tag_rules": [
+        "ml",
+        "generalization"
+      ]
+    }
+  },
+  {
+    "id": "fb_bayes_components",
+    "name": "Bayesian Components \u2192 Meaning",
+    "type": "fb",
+    "description": "Prior, likelihood, posterior, evidence.",
+    "placeholders": [
+      "component",
+      "meaning",
+      "tags"
+    ],
+    "render": {
+      "front": "What does the Bayesian component [[component]] represent?",
+      "back": "[[meaning]]",
+      "hint": "Factorization & conditioning.",
+      "tag_rules": [
+        "bayes",
+        "[[component]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_conjugacy_pairs",
+    "name": "Conjugate Pair \u2192 Posterior Family",
+    "type": "fb",
+    "description": "Identify posterior family for a conjugate pair.",
+    "placeholders": [
+      "prior",
+      "likelihood",
+      "posterior",
+      "tags"
+    ],
+    "render": {
+      "front": "Given prior [[prior]] and likelihood [[likelihood]], what is the posterior family?",
+      "back": "[[posterior]]",
+      "hint": "Recall natural parameters.",
+      "tag_rules": [
+        "bayes",
+        "conjugacy"
+      ]
+    }
+  },
+  {
+    "id": "fb_matrix_decomp",
+    "name": "Matrix Decomposition \u2192 Form",
+    "type": "fb",
+    "description": "Name on front (SVD/QR/Eig) and canonical form on back.",
+    "placeholders": [
+      "decomp",
+      "form",
+      "tags"
+    ],
+    "render": {
+      "front": "Write the canonical form for [[decomp]].",
+      "back": "$$[[form]]$$",
+      "hint": "Include orthogonality or symmetry if relevant.",
+      "tag_rules": [
+        "linear_algebra",
+        "[[decomp]]"
+      ]
+    }
+  },
+  {
+    "id": "fb_loss_usecase",
+    "name": "Loss Function \u2192 Use case",
+    "type": "fb",
+    "description": "Which problems use a given loss and why.",
+    "placeholders": [
+      "loss",
+      "usecase",
+      "tags"
+    ],
+    "render": {
+      "front": "Where is [[loss]] typically used and why?",
+      "back": "[[usecase]]",
+      "hint": "Match loss to data/label type.",
+      "tag_rules": [
+        "ml",
+        "loss"
+      ]
+    }
+  },
+  {
+    "id": "fb_graph_algo_complexity",
+    "name": "Graph Algorithm \u2192 Complexity",
+    "type": "fb",
+    "description": "Recall time complexity for a named graph algorithm.",
+    "placeholders": [
+      "algorithm",
+      "complexity",
+      "tags"
+    ],
+    "render": {
+      "front": "What is the time complexity of [[algorithm]]?",
+      "back": "[[complexity]]",
+      "hint": "Express in big-O using |V| and |E|.",
+      "tag_rules": [
+        "network",
+        "algorithm",
+        "complexity"
+      ]
+    }
+  }
+]

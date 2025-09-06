@@ -1,0 +1,132 @@
+[
+  {
+    "id": "fb_concept_basic",
+    "name": "Concept → Definition",
+    "type": "fb",
+    "description": "Term on front, crisp definition on back.",
+    "placeholders": ["term", "definition", "tags"],
+    "render": {
+      "front": "What is [[term]]?",
+      "back": "[[definition]]",
+      "hint": "Recall the core idea and any assumptions.",
+      "tag_rules": ["concept", "[[term]]"]
+    }
+  },
+  {
+    "id": "fb_concept_context",
+    "name": "Concept with Context",
+    "type": "fb",
+    "description": "Definition plus 1-sentence context/use case.",
+    "placeholders": ["term", "definition", "context", "tags"],
+    "render": {
+      "front": "[[term]] — define it.",
+      "back": "[[definition]]\n\n_Context_: [[context]]",
+      "hint": "Think: why/when is it used?",
+      "tag_rules": ["concept", "[[term]]"]
+    }
+  },
+  {
+    "id": "fb_equation_name",
+    "name": "Equation Name → Formula",
+    "type": "fb",
+    "description": "Memorize important named equations.",
+    "placeholders": ["equation_name", "equation", "tags"],
+    "render": {
+      "front": "Write the formula for [[equation_name]].",
+      "back": "$$[[equation]]$$",
+      "hint": "Units and conditions matter.",
+      "tag_rules": ["equation", "[[equation_name]]"]
+    }
+  },
+  {
+    "id": "fb_equation_explain",
+    "name": "Equation → Meaning",
+    "type": "fb",
+    "description": "Understand what each term means.",
+    "placeholders": ["equation", "meaning", "tags"],
+    "render": {
+      "front": "Explain the meaning of this equation:\n\n$$[[equation]]$$",
+      "back": "[[meaning]]",
+      "hint": "Define the symbols and assumptions.",
+      "tag_rules": ["equation", "interpretation"]
+    }
+  },
+  {
+    "id": "fb_theorem",
+    "name": "Theorem → Statement",
+    "type": "fb",
+    "description": "Name on front, formal statement on back.",
+    "placeholders": ["theorem_name", "statement", "tags"],
+    "render": {
+      "front": "State [[theorem_name]].",
+      "back": "[[statement]]",
+      "hint": "Conditions + conclusion.",
+      "tag_rules": ["theorem", "[[theorem_name]]"]
+    }
+  },
+  {
+    "id": "fb_symbol",
+    "name": "Symbol → Meaning",
+    "type": "fb",
+    "description": "Common notation disambiguation.",
+    "placeholders": ["symbol", "meaning", "tags"],
+    "render": {
+      "front": "What does [[symbol]] denote?",
+      "back": "[[meaning]]",
+      "hint": "Think domain/codomain/type.",
+      "tag_rules": ["notation", "[[symbol]]"]
+    }
+  },
+  {
+    "id": "fb_parameter_role",
+    "name": "Parameter → Role",
+    "type": "fb",
+    "description": "Parameter name on front, role/impact on back.",
+    "placeholders": ["parameter", "role", "tags"],
+    "render": {
+      "front": "What is the role of parameter [[parameter]]?",
+      "back": "[[role]]",
+      "hint": "How does it change outputs?",
+      "tag_rules": ["parameters", "[[parameter]]"]
+    }
+  },
+  {
+    "id": "fb_steps_order",
+    "name": "Process Steps",
+    "type": "fb",
+    "description": "Ask to recall a process/algorithm steps.",
+    "placeholders": ["process_name", "steps", "tags"],
+    "render": {
+      "front": "List the main steps of [[process_name]].",
+      "back": "[[steps]]",
+      "hint": "High-level first.",
+      "tag_rules": ["process", "[[process_name]]"]
+    }
+  },
+  {
+    "id": "fb_example_qa",
+    "name": "Example Q/A",
+    "type": "fb",
+    "description": "Short question from an example; answer on back.",
+    "placeholders": ["question", "answer", "tags"],
+    "render": {
+      "front": "[[question]]",
+      "back": "[[answer]]",
+      "hint": "Check givens and units.",
+      "tag_rules": ["example", "qa"]
+    }
+  },
+  {
+    "id": "fb_reader",
+    "name": "Reader Paragraph",
+    "type": "fb",
+    "description": "One-sided ‘reader’ card; important paragraph.",
+    "placeholders": ["paragraph", "tags"],
+    "render": {
+      "front": "Read carefully:\n\n[[paragraph]]",
+      "back": "",
+      "hint": "No recall test; just reread.",
+      "tag_rules": ["reader"]
+    }
+  }
+]

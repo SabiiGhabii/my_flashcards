@@ -1,0 +1,181 @@
+{
+  "fb_enhanced": [
+    {
+      "id": "fb_code_explanation_enhanced",
+      "name": "Code Explanation (Enhanced)",
+      "type": "fb",
+      "description": "Explain what a code snippet does with AI-generated explanations",
+      "placeholders": ["code", "explanation", "tags"],
+      "render": {
+        "front": "What does this code do?\n\n[[code]]",
+        "back": "[[explanation]]",
+        "hint": "Think about the main purpose, inputs, outputs, and key operations.",
+        "tag_rules": ["code", "explanation", "[[tags]]"]
+      }
+    },
+    {
+      "id": "fb_algorithm_explanation",
+      "name": "Algorithm Explanation",
+      "type": "fb",
+      "description": "Explain algorithm concepts and approaches",
+      "placeholders": ["algorithm", "explanation", "complexity", "tags"],
+      "render": {
+        "front": "Explain the [[algorithm]] algorithm approach.",
+        "back": "[[explanation]]\n\nTime Complexity: [[complexity]]",
+        "hint": "Consider the key steps, time/space complexity, and use cases.",
+        "tag_rules": ["algorithm", "[[algorithm]]", "[[tags]]"]
+      }
+    },
+    {
+      "id": "fb_api_documentation",
+      "name": "API Documentation",
+      "type": "fb",
+      "description": "API function/method documentation cards",
+      "placeholders": ["function_name", "description", "parameters", "returns", "tags"],
+      "render": {
+        "front": "What does the [[function_name]] function do?",
+        "back": "[[description]]\n\nParameters: [[parameters]]\nReturns: [[returns]]",
+        "hint": "Consider the function's purpose, required parameters, and return value.",
+        "tag_rules": ["api", "documentation", "[[function_name]]", "[[tags]]"]
+      }
+    },
+    {
+      "id": "fb_concept_enhanced",
+      "name": "Enhanced Concept Definition",
+      "type": "fb",
+      "description": "AI-enhanced concept definition cards",
+      "placeholders": ["concept", "definition", "context", "examples", "tags"],
+      "render": {
+        "front": "What is [[concept]]?",
+        "back": "[[definition]]\n\nContext: [[context]]\n\nExample: [[examples]]",
+        "hint": "Think about the core meaning, context, and practical applications.",
+        "tag_rules": ["concept", "[[concept]]", "[[tags]]"]
+      }
+    },
+    {
+      "id": "fb_leetcode_problem",
+      "name": "LeetCode Problem Analysis",
+      "type": "fb",
+      "description": "LeetCode problem analysis and approach",
+      "placeholders": ["problem_name", "approach", "complexity", "key_insight", "tags"],
+      "render": {
+        "front": "How would you approach the [[problem_name]] problem?",
+        "back": "Approach: [[approach]]\n\nKey Insight: [[key_insight]]\n\nComplexity: [[complexity]]",
+        "hint": "Think about the optimal algorithm, data structures, and time/space trade-offs.",
+        "tag_rules": ["leetcode", "problem", "[[problem_name]]", "[[tags]]"]
+      }
+    }
+  ],
+  "cloze_enhanced": [
+    {
+      "id": "cloze_api_usage_enhanced",
+      "name": "Enhanced API Usage",
+      "type": "cloze",
+      "description": "API usage with context and parameters",
+      "placeholders": ["api_call", "context", "tags"],
+      "render": {
+        "content": "To [[context]], use {{c1::[[api_call]]}}.",
+        "hint": "What API call or import statement is needed?",
+        "tag_rules": ["cloze", "api", "usage", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cloze_complexity",
+      "name": "Algorithm Complexity",
+      "type": "cloze",
+      "description": "Time and space complexity analysis",
+      "placeholders": ["algorithm", "time_complexity", "space_complexity", "tags"],
+      "render": {
+        "content": "The [[algorithm]] algorithm has time complexity {{c1::[[time_complexity]]}} and space complexity {{c2::[[space_complexity]]}}.",
+        "hint": "Consider the number of operations and memory usage relative to input size.",
+        "tag_rules": ["cloze", "complexity", "algorithm", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cloze_equation_enhanced",
+      "name": "Enhanced Mathematical Equation",
+      "type": "cloze",
+      "description": "Mathematical equations with context",
+      "placeholders": ["equation_name", "equation", "context", "tags"],
+      "render": {
+        "content": "[[equation_name]] ([[context]]): {{c1::[[equation]]}}",
+        "hint": "Recall the mathematical formula and its application.",
+        "tag_rules": ["cloze", "equation", "math", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cloze_design_pattern",
+      "name": "Design Pattern",
+      "type": "cloze",
+      "description": "Software design patterns and their use cases",
+      "placeholders": ["pattern_name", "use_case", "implementation", "tags"],
+      "render": {
+        "content": "The {{c1::[[pattern_name]]}} pattern is used when [[use_case]] and is implemented using {{c2::[[implementation]]}}.",
+        "hint": "Think about common software design patterns and their applications.",
+        "tag_rules": ["cloze", "design_pattern", "[[pattern_name]]", "[[tags]]"]
+      }
+    }
+  ],
+  "cloze_input_enhanced": [
+    {
+      "id": "cin_code_completion_enhanced",
+      "name": "Enhanced Code Completion",
+      "type": "cloze_input",
+      "description": "Code completion with context and explanation",
+      "placeholders": ["code_with_blank", "explanation", "tags"],
+      "render": {
+        "content": "~CODE[python]\n[[code_with_blank]]\n~\n\nPurpose: [[explanation]]",
+        "hint": "Complete the missing code. Consider syntax, naming conventions, and the stated purpose.",
+        "tag_rules": ["cin", "code", "completion", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cin_algorithm_implementation",
+      "name": "Algorithm Implementation",
+      "type": "cloze_input",
+      "description": "Implement key parts of algorithms",
+      "placeholders": ["algorithm_name", "code_with_blank", "key_concept", "tags"],
+      "render": {
+        "content": "Implement the [[algorithm_name]] algorithm:\n\n~CODE[python]\n[[code_with_blank]]\n~\n\nKey concept: [[key_concept]]",
+        "hint": "Focus on the core algorithmic logic and the key concept mentioned.",
+        "tag_rules": ["cin", "algorithm", "implementation", "[[algorithm_name]]", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cin_data_structure_operation",
+      "name": "Data Structure Operation",
+      "type": "cloze_input",
+      "description": "Implement data structure operations",
+      "placeholders": ["data_structure", "operation", "code_with_blank", "complexity", "tags"],
+      "render": {
+        "content": "Implement the [[operation]] operation for [[data_structure]]:\n\n~CODE[python]\n[[code_with_blank]]\n~\n\nExpected complexity: [[complexity]]",
+        "hint": "Consider the data structure properties and the expected time/space complexity.",
+        "tag_rules": ["cin", "data_structure", "[[data_structure]]", "[[operation]]", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cin_sql_query",
+      "name": "SQL Query Completion",
+      "type": "cloze_input",
+      "description": "Complete SQL queries for database operations",
+      "placeholders": ["query_purpose", "sql_with_blank", "expected_result", "tags"],
+      "render": {
+        "content": "Write a SQL query to [[query_purpose]]:\n\n~CODE[sql]\n[[sql_with_blank]]\n~\n\nExpected result: [[expected_result]]",
+        "hint": "Consider SQL syntax, table relationships, and the expected output format.",
+        "tag_rules": ["cin", "sql", "database", "query", "[[tags]]"]
+      }
+    },
+    {
+      "id": "cin_regex_pattern",
+      "name": "Regular Expression Pattern",
+      "type": "cloze_input",
+      "description": "Complete regex patterns for text processing",
+      "placeholders": ["pattern_purpose", "regex_with_blank", "example_match", "tags"],
+      "render": {
+        "content": "Create a regex pattern to [[pattern_purpose]]:\n\nPattern: {{cin1::[[regex_with_blank]]}}\n\nExample match: [[example_match]]",
+        "hint": "Consider regex syntax, character classes, quantifiers, and anchors.",
+        "tag_rules": ["cin", "regex", "pattern", "text_processing", "[[tags]]"]
+      }
+    }
+  ]
+}

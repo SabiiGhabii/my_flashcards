@@ -1,0 +1,78 @@
+{
+  "app": {
+    "name": "Plus Ultra Cards",
+    "version": "1.0.0",
+    "organization": "Plus Ultra Cards",
+    "auto_save": true,
+    "auto_backup": true,
+    "backup_interval_days": 7,
+    "session_timeout_minutes": 60
+  },
+  "theme": {
+    "current_theme": "neobrutalist",
+    "retro95_enabled": true,
+    "font_size": 10,
+    "neobrutalist_colors": {
+      "primary": "#FF0000",
+      "secondary": "#0000FF",
+      "accent": "#00FFFF",
+      "background": "#FFFFFF"
+    },
+    "card_flip_animation": true,
+    "show_statistics": true
+  },
+  "srs": {
+    "engine": "deeptutor",
+    "deeptutor_model": "EFC",
+    "deeptutor_reward_func": "log_likelihood",
+    "training_timesteps": 1000,
+    "training_frequency": 10,
+    "sm2_initial_interval": 1,
+    "sm2_initial_easiness": 2.5
+  },
+  "study": {
+    "default_mode": "cram",
+    "daily_goal": 20,
+    "study_reminders": true,
+    "sound_enabled": false,
+    "show_hints": true,
+    "auto_advance": false,
+    "review_batch_size": 20
+  },
+  "layout": {
+    "grid_columns": 4,
+    "default_span": [
+      1,
+      1
+    ],
+    "deck_spans": {}
+  },
+  "templates": {
+    "default_template": "Basic",
+    "custom_templates": {},
+    "code_highlighting": true,
+    "preserve_formatting": true
+  },
+  "import_export": {
+    "csv_delimiter": ",",
+    "csv_encoding": "utf-8",
+    "export_include_stats": true,
+    "backup_before_import": true
+  },
+  "database": {
+    "path": "data/cards.db",
+    "backup_path": "data/backups",
+    "vacuum_frequency_days": 30,
+    "max_backup_count": 10
+  },
+  "advanced": {
+    "debug_mode": false,
+    "log_level": "INFO",
+    "performance_monitoring": false,
+    "experimental_features": false
+  },
+  "_metadata": {
+    "last_updated": "2025-09-04T13:39:52.654561",
+    "config_version": "1.0"
+  }
+}

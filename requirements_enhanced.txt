@@ -1,0 +1,90 @@
+# Ultimate Flashcard Generation System - Enhanced Dependencies
+
+# Core Dependencies
+PyMuPDF==1.24.10
+nltk>=3.8
+yake>=0.4.8
+keybert>=0.8.0
+sentence-transformers>=2.2.2
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+
+# AI and NLP
+google-generativeai>=0.3.0
+transformers>=4.30.0
+torch>=2.0.0
+sympy>=1.12
+
+# Web and API Support
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+PyGithub>=1.59.0
+urllib3>=2.0.0
+
+# Enhanced CLI and UI
+rich>=13.7.0
+click>=8.1.7
+colorama>=0.4.6
+typer>=0.9.0
+questionary>=2.0.0
+
+# Performance and Optimization
+psutil>=5.9.0
+redis>=4.6.0
+joblib>=1.3.0
+memory-profiler>=0.61.0
+
+# Export and Data Processing
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+python-docx>=0.8.11
+markdown>=3.5.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0
+mypy>=1.5.0
+pre-commit>=3.3.0
+
+# Documentation
+sphinx>=7.1.0
+sphinx-rtd-theme>=1.3.0
+myst-parser>=2.0.0
+
+# Optional Advanced Features
+opencv-python>=4.8.0  # For image processing
+pillow>=10.0.0  # For image manipulation
+matplotlib>=3.7.0  # For visualization
+seaborn>=0.12.0  # For advanced plotting
+plotly>=5.15.0  # For interactive plots
+
+# Code Analysis
+ast-decompiler>=0.7.0
+astpretty>=3.0.0
+rope>=1.9.0
+
+# Mathematical Processing
+latex2mathml>=3.76.0
+python-latex>=0.7.0
+mathpix-markdown-it>=0.1.0
+
+# Database Support (Optional)
+sqlalchemy>=2.0.0
+sqlite3  # Built-in
+
+# Configuration Management
+pydantic>=2.3.0
+python-dotenv>=1.0.0
+configparser  # Built-in
+
+# Logging and Monitoring
+loguru>=0.7.0
+structlog>=23.1.0
+
+# Security
+cryptography>=41.0.0
+keyring>=24.2.0

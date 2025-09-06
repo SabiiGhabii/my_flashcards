@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cloze_def_missing_term",
+    "name": "Definition with Missing Term",
+    "type": "cloze",
+    "description": "Delete the key term.",
+    "placeholders": ["term", "definition", "tags"],
+    "render": {
+      "content": "{{c1::[[term]]}} — [[definition]]",
+      "hint": "Recall the exact term.",
+      "tag_rules": ["cloze", "concept", "[[term]]"]
+    }
+  },
+  {
+    "id": "cloze_def_missing_property",
+    "name": "Definition Missing Property",
+    "type": "cloze",
+    "description": "Blank out an essential property in the definition.",
+    "placeholders": ["term", "definition_clozed", "tags"],
+    "render": {
+      "content": "[[definition_clozed]]",
+      "hint": "Think the defining property.",
+      "tag_rules": ["cloze", "concept", "[[term]]"]
+    }
+  },
+  {
+    "id": "cloze_equation_symbol",
+    "name": "Equation Cloze (symbol)",
+    "type": "cloze",
+    "description": "Hide an important symbol.",
+    "placeholders": ["equation_clozed", "tags"],
+    "render": {
+      "content": "$$[[equation_clozed]]$$",
+      "hint": "Which term belongs here?",
+      "tag_rules": ["cloze", "equation"]
+    }
+  },
+  {
+    "id": "cloze_equation_operator",
+    "name": "Equation Cloze (operator)",
+    "type": "cloze",
+    "description": "Mask an operator or relation.",
+    "placeholders": ["equation_clozed", "tags"],
+    "render": {
+      "content": "$$[[equation_clozed]]$$",
+      "hint": "Mind the operation/inequality.",
+      "tag_rules": ["cloze", "equation", "operator"]
+    }
+  },
+  {
+    "id": "cloze_theorem_condition",
+    "name": "Theorem Missing Condition",
+    "type": "cloze",
+    "description": "Cloze a key precondition.",
+    "placeholders": ["theorem_clozed", "tags"],
+    "render": {
+      "content": "[[theorem_clozed]]",
+      "hint": "What must hold true?",
+      "tag_rules": ["cloze", "theorem"]
+    }
+  },
+  {
+    "id": "cloze_algo_pseudocode",
+    "name": "Algorithm Pseudocode Cloze",
+    "type": "cloze",
+    "description": "Hide key control words/lines in pseudocode.",
+    "placeholders": ["pseudocode_clozed", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[pseudocode_clozed]]\n~",
+      "hint": "Which construct is missing?",
+      "tag_rules": ["cloze", "algorithm", "pseudocode"]
+    }
+  },
+  {
+    "id": "cloze_concept_analogy",
+    "name": "Concept Analogy Cloze",
+    "type": "cloze",
+    "description": "Mask the analogy or mapping.",
+    "placeholders": ["analogy_clozed", "tags"],
+    "render": {
+      "content": "[[analogy_clozed]]",
+      "hint": "Map A → B mentally.",
+      "tag_rules": ["cloze", "analogy"]
+    }
+  },
+  {
+    "id": "cloze_api_call",
+    "name": "API Call Cloze",
+    "type": "cloze",
+    "description": "Hide a critical argument.",
+    "placeholders": ["api_clozed", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[api_clozed]]\n~",
+      "hint": "Which parameter is missing?",
+      "tag_rules": ["cloze", "code", "api"]
+    }
+  },
+  {
+    "id": "cloze_list_members",
+    "name": "List/Set Members Cloze",
+    "type": "cloze",
+    "description": "Hide one or two list members.",
+    "placeholders": ["list_sentence_clozed", "tags"],
+    "render": {
+      "content": "[[list_sentence_clozed]]",
+      "hint": "Enumerate all members.",
+      "tag_rules": ["cloze", "list"]
+    }
+  },
+  {
+    "id": "cloze_notation_meaning",
+    "name": "Notation Meaning Cloze",
+    "type": "cloze",
+    "description": "Hide notation, prompt its meaning implicitly.",
+    "placeholders": ["notation_sentence_clozed", "tags"],
+    "render": {
+      "content": "[[notation_sentence_clozed]]",
+      "hint": "Recall the symbol mapping.",
+      "tag_rules": ["cloze", "notation"]
+    }
+  }
+]

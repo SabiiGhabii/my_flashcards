@@ -1,0 +1,279 @@
+[
+  {
+    "id": "cloze_bayes_rule",
+    "name": "Bayes\u2019 Rule Cloze",
+    "type": "cloze",
+    "description": "Hide a term in Bayes\u2019 rule.",
+    "placeholders": [
+      "bayes_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[bayes_clozed]]$$",
+      "hint": "Prior \u00d7 likelihood over evidence.",
+      "tag_rules": [
+        "cloze",
+        "bayes"
+      ]
+    }
+  },
+  {
+    "id": "cloze_hazard_relation",
+    "name": "Hazard\u2013PDF\u2013Survival Cloze",
+    "type": "cloze",
+    "description": "Cloze a piece of h(t)=f(t)/S(t) or related identities.",
+    "placeholders": [
+      "hazard_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[hazard_clozed]]$$",
+      "hint": "Numerator vs denominator meaning.",
+      "tag_rules": [
+        "cloze",
+        "survival"
+      ]
+    }
+  },
+  {
+    "id": "cloze_km_product",
+    "name": "Kaplan\u2013Meier Product Cloze",
+    "type": "cloze",
+    "description": "Mask a factor in the KM product estimator.",
+    "placeholders": [
+      "km_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[km_clozed]]$$",
+      "hint": "Risk set size and events at time i.",
+      "tag_rules": [
+        "cloze",
+        "survival",
+        "km"
+      ]
+    }
+  },
+  {
+    "id": "cloze_cox_linear_predictor",
+    "name": "Cox Linear Predictor Cloze",
+    "type": "cloze",
+    "description": "Hide part of \u03b2^T x.",
+    "placeholders": [
+      "cox_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[cox_clozed]]$$",
+      "hint": "Coefficient vs covariate vector.",
+      "tag_rules": [
+        "cloze",
+        "survival",
+        "cox"
+      ]
+    }
+  },
+  {
+    "id": "cloze_partial_likelihood_piece",
+    "name": "Cox Partial Likelihood Cloze",
+    "type": "cloze",
+    "description": "Hide risk set or numerator term.",
+    "placeholders": [
+      "partial_like_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[partial_like_clozed]]$$",
+      "hint": "Ratio over risk set R_i.",
+      "tag_rules": [
+        "cloze",
+        "survival",
+        "cox"
+      ]
+    }
+  },
+  {
+    "id": "cloze_logistic_sigmoid",
+    "name": "Logistic Sigmoid Cloze",
+    "type": "cloze",
+    "description": "Mask a critical part of \u03c3(z)=1/(1+e^{-z}).",
+    "placeholders": [
+      "logistic_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[logistic_clozed]]$$",
+      "hint": "Sign in the exponent trips people up.",
+      "tag_rules": [
+        "cloze",
+        "ml"
+      ]
+    }
+  },
+  {
+    "id": "cloze_softmax_ce",
+    "name": "Softmax/Cross-Entropy Cloze",
+    "type": "cloze",
+    "description": "Hide softmax denominator or CE term.",
+    "placeholders": [
+      "softmax_ce_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[softmax_ce_clozed]]$$",
+      "hint": "Normalize over classes and log term.",
+      "tag_rules": [
+        "cloze",
+        "ml"
+      ]
+    }
+  },
+  {
+    "id": "cloze_ridge_closed_form",
+    "name": "Ridge Closed-Form Cloze",
+    "type": "cloze",
+    "description": "Hide \u03bbI or inverse piece.",
+    "placeholders": [
+      "ridge_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[ridge_clozed]]$$",
+      "hint": "Regularization stabilizes inversion.",
+      "tag_rules": [
+        "cloze",
+        "linear_algebra",
+        "ml"
+      ]
+    }
+  },
+  {
+    "id": "cloze_lasso_objective",
+    "name": "Lasso Objective Cloze",
+    "type": "cloze",
+    "description": "Blank out the L1 penalty part.",
+    "placeholders": [
+      "lasso_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[lasso_clozed]]$$",
+      "hint": "Absolute value penalty encourages sparsity.",
+      "tag_rules": [
+        "cloze",
+        "ml",
+        "regularization"
+      ]
+    }
+  },
+  {
+    "id": "cloze_gd_update",
+    "name": "Gradient Descent Update Cloze",
+    "type": "cloze",
+    "description": "Hide \u03b7 or \u2207 term.",
+    "placeholders": [
+      "gd_update_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[gd_update_clozed]]$$",
+      "hint": "Learning rate times gradient.",
+      "tag_rules": [
+        "cloze",
+        "optimization"
+      ]
+    }
+  },
+  {
+    "id": "cloze_pagerank_iter",
+    "name": "PageRank Iteration Cloze",
+    "type": "cloze",
+    "description": "Mask damping factor or transition term.",
+    "placeholders": [
+      "pagerank_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[pagerank_clozed]]$$",
+      "hint": "Teleport term plus link matrix product.",
+      "tag_rules": [
+        "cloze",
+        "network",
+        "pagerank"
+      ]
+    }
+  },
+  {
+    "id": "cloze_centrality_def",
+    "name": "Centrality Definition Cloze",
+    "type": "cloze",
+    "description": "Hide the numerator/denominator piece in a centrality formula.",
+    "placeholders": [
+      "centrality_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[centrality_clozed]]$$",
+      "hint": "Paths, pairs, or neighborhood triangles?",
+      "tag_rules": [
+        "cloze",
+        "network",
+        "centrality"
+      ]
+    }
+  },
+  {
+    "id": "cloze_eigendecomp",
+    "name": "Eigen-Decomposition Cloze",
+    "type": "cloze",
+    "description": "Mask \u039b or eigenvector matrix.",
+    "placeholders": [
+      "eigendecomp_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[eigendecomp_clozed]]$$",
+      "hint": "Diagonal matrix of eigenvalues.",
+      "tag_rules": [
+        "cloze",
+        "linear_algebra"
+      ]
+    }
+  },
+  {
+    "id": "cloze_svd_form",
+    "name": "SVD Form Cloze",
+    "type": "cloze",
+    "description": "Hide \u03a3 or one orthogonal factor.",
+    "placeholders": [
+      "svd_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[svd_clozed]]$$",
+      "hint": "U\u03a3V^T with ordered singular values.",
+      "tag_rules": [
+        "cloze",
+        "linear_algebra"
+      ]
+    }
+  },
+  {
+    "id": "cloze_probability_rules",
+    "name": "Probability Rule Cloze",
+    "type": "cloze",
+    "description": "Mask a term in product, sum, or chain rule.",
+    "placeholders": [
+      "prob_rule_clozed",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[prob_rule_clozed]]$$",
+      "hint": "Conditioning order matters.",
+      "tag_rules": [
+        "cloze",
+        "probability"
+      ]
+    }
+  }
+]

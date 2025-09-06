@@ -1,0 +1,10 @@
+{
+  "Basic": {
+    "name": "Basic",
+    "description": "Default card template with MS Sans Serif font",
+    "rich": true,
+    "css": "font-family: 'W95font', 'Microsoft Sans Serif', sans-serif; font-size: 14px; line-height: 1.4; padding: 8px;",
+    "is_preset": true,
+    "is_default": true
+  }
+}

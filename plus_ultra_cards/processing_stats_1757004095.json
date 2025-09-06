@@ -1,0 +1,93 @@
+{
+  "books_processed": 5,
+  "total_cards": 8616,
+  "total_time": 46.78371810913086,
+  "book_stats": [
+    {
+      "book_name": "Daniel Voigt Godoy - Deep Learning with PyTorch _ Step-by-Step A Beginner's Guide (2024) (2024, Independently published) - libgen.li.pdf",
+      "book_type": "pdf",
+      "cards_generated": 3305,
+      "cards_added": 3305,
+      "card_types": {
+        "basic": 1720,
+        "cloze": 1585
+      },
+      "processing_time": 13.451189994812012,
+      "deck_name": "Daniel Voigt Godoy - Deep Learning with PyTorch _ Step-by-Step A Beginner's Guide (2024) (2024, Independently published) - libgen.li - Auto Generated",
+      "deck_id": 23,
+      "export_files": {
+        "json": "exports\\book_1_Daniel_Voigt_Godoy_-_Deep_Learning_with_PyTorch___Step-by-Step_A_Beginner's_Guide_(2024)_(2024,_Independently_published)_-_libgen.li_20250904_123744.json",
+        "csv": "exports\\book_1_Daniel_Voigt_Godoy_-_Deep_Learning_with_PyTorch___Step-by-Step_A_Beginner's_Guide_(2024)_(2024,_Independently_published)_-_libgen.li_20250904_123744.csv"
+      }
+    },
+    {
+      "book_name": "Lingfei Wu, Peng Cui, Jian Pei, Liang Zhao - Graph Neural Networks_ Foundations, Frontiers, and Applications (2022, Springer) [10.1007_978-981-16-6054-2] - libgen.li.pdf",
+      "book_type": "pdf",
+      "cards_generated": 2173,
+      "cards_added": 2173,
+      "card_types": {
+        "basic": 1211,
+        "cloze": 962
+      },
+      "processing_time": 14.882590770721436,
+      "deck_name": "Lingfei Wu, Peng Cui, Jian Pei, Liang Zhao - Graph Neural Networks_ Foundations, Frontiers, and Applications (2022, Springer) [10.1007_978-981-16-6054-2] - libgen.li - Auto Generated",
+      "deck_id": 24,
+      "export_files": {
+        "json": "exports\\book_2_Lingfei_Wu,_Peng_Cui,_Jian_Pei,_Liang_Zhao_-_Graph_Neural_Networks__Foundations,_Frontiers,_and_Applications_(2022,_Springer)_[10.1007_978-981-16-6054-2]_-_libgen.li_20250904_123921.json",
+        "csv": null
+      }
+    },
+    {
+      "book_name": "Luciano Ramalho - Fluent Python (2016_2015, O'Reilly Media) - libgen.li.pdf",
+      "book_type": "pdf",
+      "cards_generated": 2677,
+      "cards_added": 2677,
+      "card_types": {
+        "basic": 1477,
+        "cloze": 1200
+      },
+      "processing_time": 12.261403322219849,
+      "deck_name": "Luciano Ramalho - Fluent Python (2016_2015, O'Reilly Media) - libgen.li - Auto Generated",
+      "deck_id": 25,
+      "export_files": {
+        "json": "exports\\book_3_Luciano_Ramalho_-_Fluent_Python_(2016_2015,_O'Reilly_Media)_-_libgen.li_20250904_124116.json",
+        "csv": "exports\\book_3_Luciano_Ramalho_-_Fluent_Python_(2016_2015,_O'Reilly_Media)_-_libgen.li_20250904_124116.csv"
+      }
+    },
+    {
+      "book_name": "Neuro Symbolic Reasoning and Learning -- Paulo Shakarian; Chitta Baral; Gerardo I_ Simari; Bowen Xi; -- SpringerBriefs in Computer Science, -- 9783031391781 -- 40a9bbbd4d67e9cb49466370b9c970c2 -- Anna\u2019s Archive.pdf",
+      "book_type": "pdf",
+      "cards_generated": 364,
+      "cards_added": 364,
+      "card_types": {
+        "basic": 273,
+        "cloze": 91
+      },
+      "processing_time": 2.388012409210205,
+      "deck_name": "Neuro Symbolic Reasoning and Learning -- Paulo Shakarian; Chitta Baral; Gerardo I_ Simari; Bowen Xi; -- SpringerBriefs in Computer Science, -- 9783031391781 -- 40a9bbbd4d67e9cb49466370b9c970c2 -- Anna\u2019s Archive - Auto Generated",
+      "deck_id": 26,
+      "export_files": {
+        "json": "exports\\book_4_Neuro_Symbolic_Reasoning_and_Learning_--_Paulo_Shakarian;_Chitta_Baral;_Gerardo_I__Simari;_Bowen_Xi;_--_SpringerBriefs_in_Computer_Science,_--_9783031391781_--_40a9bbbd4d67e9cb49466370b9c970c2_--_Anna\u2019s_Archive_20250904_124128.json",
+        "csv": "exports\\book_4_Neuro_Symbolic_Reasoning_and_Learning_--_Paulo_Shakarian;_Chitta_Baral;_Gerardo_I__Simari;_Bowen_Xi;_--_SpringerBriefs_in_Computer_Science,_--_9783031391781_--_40a9bbbd4d67e9cb49466370b9c970c2_--_Anna\u2019s_Archive_20250904_124128.csv"
+      }
+    },
+    {
+      "book_name": "Neuro-Symbolic AI _ Design Transparent and Trustworthy -- Alexiei Dingli\u2029, David Farrugia -- 1, 2023 -- Packt Publishing Pvt Ltd -- 9781804616956 -- a261259aa4a6cfb633e894ecd89f1bf1 -- Anna\u2019s Archive (1).epub",
+      "book_type": "epub",
+      "cards_generated": 99,
+      "cards_added": 97,
+      "card_types": {
+        "basic": 50,
+        "cloze": 49
+      },
+      "processing_time": 3.8005216121673584,
+      "deck_name": "Neuro-Symbolic AI _ Design Transparent and Trustworthy -- Alexiei Dingli\u2029, David Farrugia -- 1, 2023 -- Packt Publishing Pvt Ltd -- 9781804616956 -- a261259aa4a6cfb633e894ecd89f1bf1 -- Anna\u2019s Archive (1) - Auto Generated",
+      "deck_id": 27,
+      "export_files": {
+        "json": "exports\\book_5_Neuro-Symbolic_AI___Design_Transparent_and_Trustworthy_--_Alexiei_Dingli\u2029,_David_Farrugia_--_1,_2023_--_Packt_Publishing_Pvt_Ltd_--_9781804616956_--_a261259aa4a6cfb633e894ecd89f1bf1_--_Anna\u2019s_Archive_(1)_20250904_124135.json",
+        "csv": "exports\\book_5_Neuro-Symbolic_AI___Design_Transparent_and_Trustworthy_--_Alexiei_Dingli\u2029,_David_Farrugia_--_1,_2023_--_Packt_Publishing_Pvt_Ltd_--_9781804616956_--_a261259aa4a6cfb633e894ecd89f1bf1_--_Anna\u2019s_Archive_(1)_20250904_124135.csv"
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cin_code_line",
+    "name": "Code Fill (single line)",
+    "type": "cloze_input",
+    "description": "Type the missing code line/keyword.",
+    "placeholders": ["code_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[code_cin]]\n~",
+      "hint": "Mind syntax/indentation.",
+      "tag_rules": ["cin", "code"]
+    }
+  },
+  {
+    "id": "cin_code_function",
+    "name": "Function Signature Fill",
+    "type": "cloze_input",
+    "description": "Type missing function/class pieces.",
+    "placeholders": ["signature_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[signature_cin]]\n~",
+      "hint": "Arguments and types?",
+      "tag_rules": ["cin", "code", "signature"]
+    }
+  },
+  {
+    "id": "cin_equation_term",
+    "name": "Equation Term Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted term/symbol.",
+    "placeholders": ["equation_cin", "tags"],
+    "render": {
+      "content": "$$[[equation_cin]]$$",
+      "hint": "Exact symbol/name required.",
+      "tag_rules": ["cin", "equation"]
+    }
+  },
+  {
+    "id": "cin_matrix_form",
+    "name": "Matrix Form Fill",
+    "type": "cloze_input",
+    "description": "Complete matrix/vector notation.",
+    "placeholders": ["matrix_cin", "tags"],
+    "render": {
+      "content": "$$[[matrix_cin]]$$",
+      "hint": "Bracket types matter.",
+      "tag_rules": ["cin", "linear_algebra"]
+    }
+  },
+  {
+    "id": "cin_cli_command",
+    "name": "CLI Command Syntax",
+    "type": "cloze_input",
+    "description": "Complete the missing flags/args.",
+    "placeholders": ["cli_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[cli_cin]]\n~",
+      "hint": "Order of options?",
+      "tag_rules": ["cin", "cli"]
+    }
+  },
+  {
+    "id": "cin_regex",
+    "name": "Regex Piece",
+    "type": "cloze_input",
+    "description": "Type the missing regex snippet.",
+    "placeholders": ["regex_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[regex_cin]]\n~",
+      "hint": "Escapes and anchors.",
+      "tag_rules": ["cin", "regex"]
+    }
+  },
+  {
+    "id": "cin_sql",
+    "name": "SQL Fill",
+    "type": "cloze_input",
+    "description": "Complete the missing SQL fragment.",
+    "placeholders": ["sql_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[sql_cin]]\n~",
+      "hint": "Clauses order matters.",
+      "tag_rules": ["cin", "sql"]
+    }
+  },
+  {
+    "id": "cin_loop_construct",
+    "name": "Loop Construct",
+    "type": "cloze_input",
+    "description": "Type missing loop/iterator piece.",
+    "placeholders": ["loop_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[loop_cin]]\n~",
+      "hint": "Correct iterator name?",
+      "tag_rules": ["cin", "loop"]
+    }
+  },
+  {
+    "id": "cin_api_call",
+    "name": "API Call Fill",
+    "type": "cloze_input",
+    "description": "Type missing param/value in an API call.",
+    "placeholders": ["api_cin", "tags"],
+    "render": {
+      "content": "~CODE[python]\n[[api_cin]]\n~",
+      "hint": "Parameter spelling exactly.",
+      "tag_rules": ["cin", "api"]
+    }
+  },
+  {
+    "id": "cin_derivation_step",
+    "name": "Derivation Step",
+    "type": "cloze_input",
+    "description": "Type the missing algebraic step.",
+    "placeholders": ["derivation_cin", "tags"],
+    "render": {
+      "content": "$$[[derivation_cin]]$$",
+      "hint": "Show the exact term.",
+      "tag_rules": ["cin", "derivation"]
+    }
+  }
+]

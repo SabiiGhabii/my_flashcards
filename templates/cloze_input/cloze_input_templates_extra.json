@@ -1,0 +1,280 @@
+[
+  {
+    "id": "cin_hazard_fill",
+    "name": "Hazard Term Fill",
+    "type": "cloze_input",
+    "description": "Type the missing part of h(t)=f(t)/S(t) or related identity.",
+    "placeholders": [
+      "hazard_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[hazard_cin]]$$",
+      "hint": "Be precise with notation.",
+      "tag_rules": [
+        "cin",
+        "survival"
+      ]
+    }
+  },
+  {
+    "id": "cin_km_factor_fill",
+    "name": "KM Factor Fill",
+    "type": "cloze_input",
+    "description": "Type the missing factor in KM product.",
+    "placeholders": [
+      "km_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[km_cin]]$$",
+      "hint": "n_i and d_i placement.",
+      "tag_rules": [
+        "cin",
+        "survival",
+        "km"
+      ]
+    }
+  },
+  {
+    "id": "cin_cox_lp_fill",
+    "name": "Cox Linear Predictor Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted \u03b2 or x component.",
+    "placeholders": [
+      "cox_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[cox_cin]]$$",
+      "hint": "Vector or scalar form?",
+      "tag_rules": [
+        "cin",
+        "survival",
+        "cox"
+      ]
+    }
+  },
+  {
+    "id": "cin_bayes_fill",
+    "name": "Bayes Rule Fill",
+    "type": "cloze_input",
+    "description": "Type the missing Bayes term exactly.",
+    "placeholders": [
+      "bayes_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[bayes_cin]]$$",
+      "hint": "Posterior \u221d prior \u00d7 likelihood.",
+      "tag_rules": [
+        "cin",
+        "bayes"
+      ]
+    }
+  },
+  {
+    "id": "cin_softmax_fill",
+    "name": "Softmax/Cross-Entropy Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted normalization/log term.",
+    "placeholders": [
+      "softmax_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[softmax_cin]]$$",
+      "hint": "Sum over classes.",
+      "tag_rules": [
+        "cin",
+        "ml"
+      ]
+    }
+  },
+  {
+    "id": "cin_ridge_fill",
+    "name": "Ridge Closed-Form Fill",
+    "type": "cloze_input",
+    "description": "Type the missing \u03bbI or inverse piece.",
+    "placeholders": [
+      "ridge_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[ridge_cin]]$$",
+      "hint": "Dimensions must match.",
+      "tag_rules": [
+        "cin",
+        "linear_algebra",
+        "ml"
+      ]
+    }
+  },
+  {
+    "id": "cin_lasso_fill",
+    "name": "Lasso Objective Fill",
+    "type": "cloze_input",
+    "description": "Type the missing L1 penalty term.",
+    "placeholders": [
+      "lasso_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[lasso_cin]]$$",
+      "hint": "Absolute value around coefficients.",
+      "tag_rules": [
+        "cin",
+        "ml",
+        "regularization"
+      ]
+    }
+  },
+  {
+    "id": "cin_gd_update_fill",
+    "name": "Gradient Descent Update Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted learning rate or gradient piece.",
+    "placeholders": [
+      "gd_update_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[gd_update_cin]]$$",
+      "hint": "Subtract step along gradient.",
+      "tag_rules": [
+        "cin",
+        "optimization"
+      ]
+    }
+  },
+  {
+    "id": "cin_pagerank_fill",
+    "name": "PageRank Update Fill",
+    "type": "cloze_input",
+    "description": "Type the missing damping or transition term.",
+    "placeholders": [
+      "pagerank_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[pagerank_cin]]$$",
+      "hint": "Teleport + link matrix application.",
+      "tag_rules": [
+        "cin",
+        "network",
+        "pagerank"
+      ]
+    }
+  },
+  {
+    "id": "cin_api_call_fill",
+    "name": "API Call Fill (Code)",
+    "type": "cloze_input",
+    "description": "Type the missing parameter/value in an API call.",
+    "placeholders": [
+      "api_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "~CODE[python]\n[[api_cin]]\n~",
+      "hint": "Parameter spelling matters.",
+      "tag_rules": [
+        "cin",
+        "code",
+        "api"
+      ]
+    }
+  },
+  {
+    "id": "cin_numpy_linear_algebra",
+    "name": "NumPy Linear Algebra Fill",
+    "type": "cloze_input",
+    "description": "Type the missing NumPy expression (dot/solve/eig).",
+    "placeholders": [
+      "numpy_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "~CODE[python]\n[[numpy_cin]]\n~",
+      "hint": "Check shapes and function names.",
+      "tag_rules": [
+        "cin",
+        "code",
+        "numpy"
+      ]
+    }
+  },
+  {
+    "id": "cin_gradient_code",
+    "name": "Gradient Step Code Fill",
+    "type": "cloze_input",
+    "description": "Type the missing code piece in a gradient step.",
+    "placeholders": [
+      "gradient_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "~CODE[python]\n[[gradient_cin]]\n~",
+      "hint": "In-place update vs new variable.",
+      "tag_rules": [
+        "cin",
+        "code",
+        "optimization"
+      ]
+    }
+  },
+  {
+    "id": "cin_regex_fill",
+    "name": "Regex Fill",
+    "type": "cloze_input",
+    "description": "Type the missing regex snippet.",
+    "placeholders": [
+      "regex_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "~CODE[python]\n[[regex_cin]]\n~",
+      "hint": "Escapes and anchors.",
+      "tag_rules": [
+        "cin",
+        "regex"
+      ]
+    }
+  },
+  {
+    "id": "cin_eigendecomp_fill",
+    "name": "Eigen-Decomposition Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted matrix/spectrum piece.",
+    "placeholders": [
+      "eigendecomp_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[eigendecomp_cin]]$$",
+      "hint": "Similarity transform format.",
+      "tag_rules": [
+        "cin",
+        "linear_algebra"
+      ]
+    }
+  },
+  {
+    "id": "cin_svd_fill",
+    "name": "SVD Fill",
+    "type": "cloze_input",
+    "description": "Type the omitted factor in U\u03a3V^T.",
+    "placeholders": [
+      "svd_cin",
+      "tags"
+    ],
+    "render": {
+      "content": "$$[[svd_cin]]$$",
+      "hint": "Orthogonality and order of factors.",
+      "tag_rules": [
+        "cin",
+        "linear_algebra"
+      ]
+    }
+  }
+]
