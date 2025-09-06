@@ -438,11 +438,25 @@ class TextFormatter:
             token = f"__CLOZE_INPUT_TOKEN_{cloze_num}_{len(token_map)}__"
 
             if reveal:
-                # Show the answer with highlighting
-                html_replacement = f'<span class="cloze-input-revealed" data-cloze="{cloze_num}">{answer}</span>'
+                # Render the answer to HTML to support style markup without syntax highlighting
+                rendered_answer = self.render_to_html(answer, apply_syntax_highlighting=False)
+                # Detect if the rendered answer is a code block (<pre or <div> with class="code-block")
+                if re.match(r'\s*(?:<div class="code-block"[\s\S]*</div>|<pre class="code-block"[\s\S]*</pre>)\s*$', rendered_answer):
+                    # For code blocks, show the rendered block directly with no additional wrapping
+                    html_replacement = rendered_answer
+                else:
+                    # For normal text, wrap the rendered answer in brackets with no special background
+                    html_replacement = (
+                        f'<span class="cloze-input-revealed-answer" data-cloze="{cloze_num}">' 
+                        f'[{rendered_answer}]'
+                        '</span>'
+                    )
             else:
                 # Show input field for user interaction
-                html_replacement = f'<input type="text" class="cloze-input-field" data-cloze="{cloze_num}" data-answer="{answer}" placeholder="Type answer..." />'
+                html_replacement = (
+                    f'<input type="text" class="cloze-input-field" data-cloze="{cloze_num}" '
+                    f'data-answer="{answer}" placeholder="Type answer..." />'
+                )
 
             token_map[token] = html_replacement
 
